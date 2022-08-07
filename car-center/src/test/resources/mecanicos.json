@@ -1,0 +1,67 @@
+[
+  {
+    "tipoDocumento": "CC",
+    "documento": 111111111,
+    "primerNombre": "MEC 1",
+    "segundoNombre": null,
+    "primerApellido": "MEC AP1",
+    "segundoApellido": null,
+    "celular": "111111",
+    "direccion": "XXXXXXXXX",
+    "email": "XXXXXXXXX",
+    "estado": "A",
+    "fechaRegistro": "2022-08-06T19:01:05.152Z"
+  },
+  {
+    "tipoDocumento": "CC",
+    "documento": 1112121212,
+    "primerNombre": "MEC 2",
+    "segundoNombre": null,
+    "primerApellido": "MEC AP2",
+    "segundoApellido": null,
+    "celular": "11111",
+    "direccion": "XXXXXXX",
+    "email": "XXXXXXX",
+    "estado": "A",
+    "fechaRegistro": "2022-08-06T19:02:53.809Z"
+  },
+  {
+    "tipoDocumento": "CC",
+    "documento": 133133133,
+    "primerNombre": "MEC 3",
+    "segundoNombre": null,
+    "primerApellido": "MEC AP3",
+    "segundoApellido": null,
+    "celular": "11111111",
+    "direccion": "XXXXXXXXXX",
+    "email": "XXXXXXXX",
+    "estado": "A",
+    "fechaRegistro": "2022-08-06T19:02:53.877Z"
+  },
+  {
+    "tipoDocumento": "CC",
+    "documento": 1414144141,
+    "primerNombre": "MEC 4",
+    "segundoNombre": null,
+    "primerApellido": "MEC AP4",
+    "segundoApellido": null,
+    "celular": "111111",
+    "direccion": "XX",
+    "email": "XXXXXXXXXX",
+    "estado": "A",
+    "fechaRegistro": "2022-08-06T19:02:53.899Z"
+  },
+  {
+    "tipoDocumento": "PP",
+    "documento": 1234567890,
+    "primerNombre": "jfwejfwejk",
+    "segundoNombre": "grggeer",
+    "primerApellido": "ergergergr",
+    "segundoApellido": "fwefwerwr",
+    "celular": "3333300001",
+    "direccion": "fwef wfwefw efe",
+    "email": "fweffwef@fgrrrt.coo",
+    "estado": "A",
+    "fechaRegistro": "2022-08-07T17:27:12.444Z"
+  }
+]
