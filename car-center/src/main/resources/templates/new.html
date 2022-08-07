@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Center</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/template.css}">
+</head>
+<body style="background: #0000009e;">
+<div class="container-sst">
+    <div class="dialog-container">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" th:if="${success}">
+            <strong>Mecánico registrado!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="col-12 d-flex container-header">
+            <div class="col-10 d-flex align-items-center">
+                <h4 style="font-size: 30px;" class="text-white">Registro Mecánico</h4>
+            </div>
+            <div class="col-2 d-flex align-items-center">
+                <a class="btn btn-dark button-form" style="width: 57%;" role="button" th:href="@{/}">
+                    Regresar
+                </a>
+            </div>
+        </div>
+        <div class="container-form">
+            <div class="col-12">
+                <form id="form0" method="post" th:action="@{/new}"
+                      th:object="${registroMecanico}">
+                    <div class="col-12">
+                        <p class="p-form">Tipo de identificación</p>
+                    </div>
+                    <div class="col-12">
+                        <select class="width-form" id="tiposId" name="tiposId" style="padding: 15px;"
+                                th:field="*{tipoDocumento}">
+                            <option th:each="tipoId: ${tiposIdentificacion}" th:text="${tipoId.value}"
+                                    th:value="${tipoId.key}"></option>
+                        </select>
+                        <div th:errors="*{tipoDocumento}" th:if="${#fields.hasErrors('tipoDocumento')}"></div>
+                    </div>
+                    <div>
+                        <div class="col-12">
+                            <p class="p-form">Identificación</p>
+                        </div>
+                        <div class="col-12">
+                            <input class="width-form input-form"
+                                   th:field="*{documento}" type="text">
+                        </div>
+                        <div th:errors="*{documento}" th:if="${#fields.hasErrors('documento')}"></div>
+                    </div>
+                    <div>
+                        <div class="col-12">
+                            <p class="p-form">Primer Nombre</p>
+                        </div>
+                        <div class="col-12">
+                            <input class="width-form input-form" th:field="*{primerNombre}"
+                                   th:value="*{primerNombre}">
+                        </div>
+                        <div th:errors="*{primerNombre}" th:if="${#fields.hasErrors('primerNombre')}"></div>
+                    </div>
+                    <div>
+                        <div class="col-12">
+                            <p class="p-form">Segundo Nombre</p>
+                        </div>
+                        <div class="col-12">
+                            <input class="width-form input-form" th:field="*{segundoNombre}"
+                                   th:value="*{segundoNombre}">
+                        </div>
+                        <div th:errors="*{segundoNombre}" th:if="${#fields.hasErrors('segundoNombre')}"></div>
+                    </div>
+                    <div>
+                        <div class="col-12">
+                            <p class="p-form">Primer Apellido</p>
+                        </div>
+                        <div class="col-12">
+                            <input class="width-form input-form" th:field="*{primerApellido}"
+                                   th:value="*{primerApellido}">
+                        </div>
+                        <div th:errors="*{primerApellido}" th:if="${#fields.hasErrors('primerApellido')}"></div>
+                    </div>
+                    <div>
+                        <div class="col-12">
+                            <p class="p-form">Segundo Apellido</p>
+                        </div>
+                        <div class="col-12">
+                            <input class="width-form input-form" th:field="*{segundoApellido}"
+                                   th:value="*{segundoApellido}">
+                        </div>
+                        <div th:errors="*{segundoApellido}" th:if="${#fields.hasErrors('segundoApellido')}"></div>
+                    </div>
+                    <div>
+                        <div class="col-12">
+                            <p class="p-form">Correo electrónico</p>
+                        </div>
+                        <div class="col-12">
+                            <input class="width-form input-form" th:field="*{email}"
+                                   th:value="*{email}" type="email">
+                        </div>
+                        <div th:errors="*{email}" th:if="${#fields.hasErrors('email')}"></div>
+                    </div>
+                    <div>
+                        <div class="col-12">
+                            <p class="p-form">Celular</p>
+                        </div>
+                        <div class="col-12">
+                            <input class="width-form input-form" th:field="*{celular}" type="tel">
+                        </div>
+                        <div th:errors="*{celular}" th:if="${#fields.hasErrors('celular')}"></div>
+                    </div>
+                    <div>
+                        <div class="col-12">
+                            <p class="p-form">Dirección</p>
+                        </div>
+                        <div class="col-12">
+                            <input class="width-form input-form" th:field="*{direccion}">
+                        </div>
+                        <div th:errors="*{direccion}" th:if="${#fields.hasErrors('direccion')}"></div>
+                    </div>
+                    <div class="col-12" style="margin-top: 10px; text-align: center">
+                        <button class="button-form g-recaptcha" id="btnConfirmar" style="width: 50%;">
+                                <span id="iconBtn" style="display: none" class="spinner-border spinner-border-sm"
+                                      role="status" aria-hidden="true"></span>
+                            Continuar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/jquery.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
+</body>
+</html>

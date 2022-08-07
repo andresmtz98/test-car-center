@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Center</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/template.css}">
+</head>
+<body style="background: #0000009e;">
+<div class="container-sst">
+    <div class="dialog-container">
+        <div class="col-12 d-flex container-header">
+            <div class="col-10 d-flex align-items-center">
+                <h4 style="font-size: 30px;" class="text-white">Mecánicos Disponibles</h4>
+            </div>
+            <div class="col-2 d-flex align-items-center">
+                <a class="btn btn-dark button-form" style="width: 57%;" role="button" th:href="@{/new}">
+                    Registrar
+                </a>
+            </div>
+        </div>
+        <div class="container-form">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Documento</th>
+                        <th scope="col">Celular</th>
+                        <th scope="col">Horas Últ. 30 días</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="disponible: ${disponibles}">
+                        <td th:text="${disponible.nombre}"></td>
+                        <td th:text="${disponible.documento}"></td>
+                        <td th:text="${disponible.celular}"></td>
+                        <td th:text="${disponible.totalHoras}"></td>
+                    </tr>
+                </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+<!--<script th:src="@{/js/jquery.min.js}" type="text/javascript"></script>-->
+<script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
+</body>
+</html>
