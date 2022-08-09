@@ -32,6 +32,7 @@ public class MecanicosController {
     public String inicio(Model model, @RequestParam(required = false) Pageable page) {
         if (page == null)
             page = Pageable.ofSize(Constant.INT_NUMBER_TEN);
+        // Busca los mecánicos disponibles en la BD y los pasa como parámetro a la vista
         model.addAttribute(Constant.STRING_DISPONIBLES, mecanicosService.consultarMecanicosDisponibles(page));
         return Constant.STRING_HOME;
     }
@@ -47,10 +48,12 @@ public class MecanicosController {
     public String registrar(@Valid @ModelAttribute(Constant.STRING_REGISTRO_MECANICO_PROPERTY)
         NuevoMecanico nuevoMecanico, BindingResult bindingResult, Model model, SessionStatus sessionStatus) {
 
+        // Se valida si nuevoMecanico tiene errores de validación
         if (bindingResult.hasErrors()) {
             return Constant.STRING_NEW;
         }
 
+        // Se almacena el mecánico en la BD
         Mecanicos m = mecanicosService.save(CarCenterUtil.transformarMecanico(nuevoMecanico));
         model.addAttribute(Constant.STRING_SUCESS, m != null);
         model.addAttribute(Constant.STRING_REGISTRO_MECANICO_PROPERTY, new NuevoMecanico());

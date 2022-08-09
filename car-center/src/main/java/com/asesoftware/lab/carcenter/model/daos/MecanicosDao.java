@@ -12,6 +12,13 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 public interface MecanicosDao extends
     PagingAndSortingRepository<Mecanicos, MecanicosPK> {
 
+    /**
+     * Obtiene el listado de mecánicos disponibles en el momento, ordenado por el número de
+     * horas asignadas durantes los últimos 30 días
+     *
+     * @param page paginación
+     * @return {@link Page} de {@link MecanicoDisponible}
+     */
     @Query(nativeQuery = true, value = JPAConstant.QUERY_OBTENER_MECANICOS_DISPONIBLES)
     Page<MecanicoDisponible> consultarMecanicosDisponibles(Pageable page);
 }

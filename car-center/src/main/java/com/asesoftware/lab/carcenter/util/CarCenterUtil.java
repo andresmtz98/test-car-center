@@ -10,6 +10,12 @@ public class CarCenterUtil {
     private CarCenterUtil() {
     }
 
+    /**
+     * Mapea un objeto de tipo {@link NuevoMecanico} al modelo {@link Mecanicos}
+     *
+     * @param source objeto a mapear
+     * @return objeto mapeado
+     */
     public static Mecanicos transformarMecanico(NuevoMecanico source) {
         return Mecanicos.builder().withPrimerNombre(source.getPrimerNombre())
             .withSegundoNombre(source.getSegundoNombre())
@@ -21,6 +27,11 @@ public class CarCenterUtil {
             .withDireccion(source.getDireccion()).build();
     }
 
+    /**
+     * Genera algunos tipos de identificación
+     *
+     * @return {@link Map} de tipos de identificación
+     */
     public static Map<String, String> generarTiposIdentificacion() {
         return Map.of(Constant.STRING_CC, Constant.STRING_CC_NAME,
             Constant.STRING_CE, Constant.STRING_CE_NAME, Constant.STRING_PP,
